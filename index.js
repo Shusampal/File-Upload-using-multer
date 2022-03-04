@@ -3,6 +3,8 @@ const app = express();
 const path = require('path');
 const multer = require('multer')
 const upload = multer({ dest: 'uploads/' })
+require('dotenv').config();
+
 const PORT = process.env.PORT || 5000;
 
 app.set('view engine', 'ejs');
