@@ -3,7 +3,7 @@ const app = express();
 const path = require('path');
 const multer = require('multer')
 const upload = multer({ dest: 'uploads/' })
-const PORT = 5000;
+const PORT = process.env.PORT || 5000;
 
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, '/views'));
@@ -109,5 +109,5 @@ app.post('/delete', (req, res) => {
 // To listen the Application
 
 app.listen(PORT, () => {
-    console.log(`Listening at 5000...`);
+    console.log(`Listening at Port ${PORT}...`);
 })
