@@ -4,6 +4,7 @@ const path = require('path');
 const multer = require('multer')
 const upload = multer({ dest: 'uploads/' })
 require('dotenv').config();
+const cors = require('cors');
 
 const PORT = process.env.PORT || 5000;
 
@@ -13,6 +14,9 @@ app.set('views', path.join(__dirname, '/views'));
 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json())
+app.use(cors({
+    "origin" : "*"
+}))
 
 var posts = [];
 var counter = 0;
